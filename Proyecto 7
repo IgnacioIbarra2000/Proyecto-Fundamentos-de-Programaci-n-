@@ -42,3 +42,13 @@ lg_sin = 773
 ays_sin = 284
 mag_sin = 79    
 total_sin = 16722
+
+
+
+regiones_total = [ari, tar, ant, ata, coq, val, met, ohg, mau, ñub, bio, ara, lr, lg, ays, mag, ari_sin, tar_sin, ant_sin, ata_sin, coq_sin, val_sin, met_sin, ohg_sin, mau_sin, ñub_sin, bio_sin, ara_sin, lr_sin, lg_sin, ays_sin, mag_sin]
+
+regiones_concontagio = [ari, tar, ant, ata, coq, val, met, ohg, mau, ñub, bio, ara, lr, lg, ays, mag]
+regiones_sincontagio = [ari_sin, tar_sin, ant_sin, ata_sin, coq_sin, val_sin, met_sin, ohg_sin, mau_sin, ñub_sin, bio_sin, ara_sin, lr_sin, lg_sin, ays_sin, mag_sin]
+
+regiones_convalores = [730, 673, 1101, 800, 2434, 4818, 20855, 2396, 3336, 1202, 4111, 2866, 1554, 1871, 434, 240]
+regiones_sinvalores = [379, 255, 623, 649, 721, 1207, 6064, 761, 1217, 334, 1043, 1178, 1155, 773, 284, 79]
