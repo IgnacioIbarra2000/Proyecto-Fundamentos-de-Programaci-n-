@@ -1,0 +1,44 @@
+import matplotlib.pyplot as plt #Se importa librería Matplotlib y se define la abreviación "plt".
+
+#Inicio de evidencia sumatoria de los casos por regiones desde él 2021-06-14 hasta 2021-06-28.
+#formato: 
+#Región = sumaCasosTotalesUltimas2Semanas (Se evita usar suma por suma en el código, se realiza sumatoria por Excel).
+regiones = ['Arica Y Parinacota', 'Tarapaca', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaiso', 'Metropolitana', 'Ohiggins', 'Maule', 'Ñuble', 'Biobio', 'Araucania', 'Los Rios', 'Los Lagos', 'Aysen', 'Magallanes']
+n_regiones = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+opcion_graf = [1, 2, 3, 4, 5, 6]
+#Regiones con sintomas
+ari = 730 #Arica Y Parinacota.
+tar = 673 #Tarapacá.
+ant = 1101 #Antofagasta.
+ata = 800 #Atacama.
+coq = 2434 #Coquimbo.
+val = 4818 #Valparaíso.
+met = 20855 #Metropolitana.
+ohg = 2396 #O’Higgins.
+mau = 3336 #Maule. 
+ñub = 1202 #Ñuble. 
+bio = 4111 #Biobío.
+ara = 2866 #Araucanía.
+lr = 1554 #Los Riós.
+lg = 1871 #Los Lagos.
+ays = 434 #Aysén.
+mag = 240 #Magallanes.
+total_caso = 49421 #Sumatoria total de casos.
+#Regiones sin sintomas
+ari_sin = 379
+tar_sin = 255
+ant_sin = 623
+ata_sin = 649
+coq_sin = 721
+val_sin = 1207
+met_sin = 6064
+ohg_sin = 761
+mau_sin = 1217
+ñub_sin = 334
+bio_sin = 1043
+ara_sin = 1178
+lr_sin = 1155
+lg_sin = 773
+ays_sin = 284
+mag_sin = 79    
+total_sin = 16722
