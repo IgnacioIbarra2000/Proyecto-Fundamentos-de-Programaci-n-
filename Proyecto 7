@@ -52,3 +52,72 @@ regiones_sincontagio = [ari_sin, tar_sin, ant_sin, ata_sin, coq_sin, val_sin, me
 
 regiones_convalores = [730, 673, 1101, 800, 2434, 4818, 20855, 2396, 3336, 1202, 4111, 2866, 1554, 1871, 434, 240]
 regiones_sinvalores = [379, 255, 623, 649, 721, 1207, 6064, 761, 1217, 334, 1043, 1178, 1155, 773, 284, 79]
+
+#Inicio print menú.
+
+print(''' 
+    Datos COVID-19
+    
+A continuación se mostrará la lista de regiones de Chile.
+De esta lista debe escoger una región para mostrar un gráfico respectivo.
+
+Hay dos tipos de gráficos:
+
+- Gráfico de contagiados con síntomas no acumulativos en las últimas 2 semanas.
+- Gráfico de contagiados con síntomas acumulativos en las últimas 2 semanas.
+
+Regiones: 
+
+1) Arica Y Parinacota
+2) Tarapaca
+3) Antofagasta
+4) Atacama
+5) Coquimbo
+6) Valparaíso
+7) Metropolitana
+8) Ohiggins
+9) Maule
+10) Ñuble
+11) Biobio
+12) Araucania
+13) Los Rios
+14) Los Lagos
+15) Aysen
+16) Magallanes
+       
+''') #Fin print menú.
+
+op = input("Ingrese nombre o índice correspondiente de la región: ")   #input de región.
+op = op.replace(" ", "")
+if op.isnumeric():
+    op = int(op)
+    if op in n_regiones and op > 0 and op < 17:  #Verificar que el indice de región corresponda a la región seleccionada.
+        print("Ha seleccionado la región: ", regiones[op - 1]) #Imprimir e indexar región correspondiente.
+        while True: 
+            print('''
+               ¿Qué información desea visualizar?:
+                1) Gráfico de contagiados con síntomas no acumulativos.
+                2) Gráfico de contagiados con síntomas acumulativos.
+                3) Región con más y menos contagiados con síntomas no acumulativos.
+                4) Región con más y menos contagiados con síntomas acumulativos.
+                5) Información de la región seleccionada. 
+                6) Salir. 
+                ''')
+
+            op_graf = input("Ingrese tipo de gráfico (1 - 6): ")#Input de opción gráfico
+            op_graf = op_graf.replace(" ", "")
+            while not op_graf.isnumeric():
+                print('''Error, ingrese un índice válido
+                      
+               ¿Qué información desea visualizar?:
+                1) Gráfico de contagiados con síntomas no acumulativos.
+                2) Gráfico de contagiados con síntomas acumulativos.
+                3) Región con más y menos contagiados con síntomas no acumulativos.
+                4) Región con más y menos contagiados con síntomas acumulativos.
+                5) Información de la región seleccionada. 
+                6) Salir. 
+                ''')
+            
+                op_graf = input("Ingrese tipo de gráfico (1 - 6): ")
+                
+            op_graf = int(op_graf)
