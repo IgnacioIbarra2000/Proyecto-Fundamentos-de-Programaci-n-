@@ -121,3 +121,75 @@ if op.isnumeric():
                 op_graf = input("Ingrese tipo de gráfico (1 - 6): ")
                 
             op_graf = int(op_graf)
+
+            if op_graf in opcion_graf:
+                if opcion_graf[op_graf - 1] == 1: #Inicio condicional gráfico de contagiados con síntomas no acumulativos.
+                    print("Ha seleccionado la opción: ", opcion_graf[op_graf - 1]) #Confirmación de elección e indexar opción.
+                    if op in n_regiones: #Condicional de gráfico
+                        ## Declaramos valores para el eje x
+                        eje_x = ['Arica y P.', 'Tarapaca', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaiso', 'Metropolitana', 'Ohiggins', 'Maule', 'Ñuble', 'Biobio', 'Araucania', 'Los Rios', 'Los Lagos', 'Aysen', 'Magallanes']
+                        ## Declaramos valores para el eje y
+                        eje_y = [ari_sin, tar_sin, ant_sin, ata_sin, coq_sin, val_sin, met_sin, ohg_sin, mau_sin, ñub_sin, bio_sin, ara_sin, lr_sin, lg_sin, ays_sin, mag_sin]
+                        plt.figure(figsize=(10,6))
+                        plt.bar(eje_x, eje_y)
+                        plt.xlabel("Regiones", fontsize = 20, color = "maroon") #Nombre Eje X
+                        plt.ylabel("Nro. de contagiados", fontsize = 20, color = "maroon") #Nombre Eje Y
+                        plt.title("Gráfico de contagiados con síntomas no acumulativos.", fontsize = 25, color = "black") #Titulo del grafico
+                        plt.xticks(rotation = 45)
+                        plt.show()  
+                elif opcion_graf[op_graf - 1] == 2: #Inicio condicional gráfico de contagiados con síntomas acumulativos.
+                    print("Ha seleccionado la opción: ", opcion_graf[op_graf - 1]) #Confirmación de elección e indexar opción.
+                    ## Declaramos valores para el eje x
+                    eje_x = ['Arica y P.', 'Tarapaca', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaiso', 'Metropolitana', 'Ohiggins', 'Maule', 'Ñuble', 'Biobio', 'Araucania', 'Los Rios', 'Los Lagos', 'Aysen', 'Magallanes']
+                    ## Declaramos valores para el eje y
+                    eje_y = [ari, tar, ant, ata, coq, val, met, ohg, mau, ñub, bio, ara, lr, lg, ays, mag]
+                    plt.figure(figsize=(10,6))
+                    plt.bar(eje_x, eje_y)
+                    plt.xlabel("Regiones", fontsize = 20, color = "maroon") #Nombre Eje X
+                    plt.ylabel("Nro. de contagiados", fontsize = 20, color = "maroon") #Nombre Eje Y
+                    plt.title("Gráfico de contagiados con síntomas acumulativos.", fontsize = 25, color = "black") #Titulo del grafico
+                    plt.xticks(rotation = 45)
+                    plt.show()   
+                elif opcion_graf[op_graf - 1] == 3:             
+                    print("Ha seleccionado la opción: ", opcion_graf[op_graf - 1])
+                    mayor1 = 0
+                    for x in regiones_sincontagio: #Condicional para calcullar el mayor de contagiados.
+                        if x > mayor1:
+                            mayor1 = x
+                        elif x < mayor1:
+                            menor1 = x
+                    mayor_s = regiones_sinvalores.index(mayor1)
+                    mascontagios1 = regiones[mayor_s]
+                    menor_s = regiones_sinvalores.index(menor1)
+                    menoscontagios1 = regiones[menor_s]
+                    print("\nLa región con más contagios con síntomas no acumulativos es la región", mascontagios1 ,"con un total de", mayor1,"casos")
+                    print("La región con menos contagios con síntomas no acumulativos es la región",menoscontagios1,"con un total de", menor1,"casos")  
+                        
+                elif opcion_graf[op_graf - 1] == 4:              
+                    print("Ha seleccionado la opción: ", opcion_graf[op_graf - 1])                    
+                    mayor2 = 0
+                    for x in regiones_concontagio: #Condicional para calcular el mayor de contagiados.
+                        if x > mayor2:
+                            mayor2 = x
+                        elif x < mayor2: 
+                            menor2 = x
+                    mayor_c = regiones_convalores.index(mayor2)
+                    mascontagios2 = regiones[mayor_c]
+                    menor_c = regiones_convalores.index(menor2)
+                    menoscontagios2 = regiones[menor_c]
+                    print("\nLa región con más contagios con síntomas acumulativos es la región",mascontagios2,"con un total de", mayor2,"casos")
+                    print("La región con menos contagios con síntomas acumulativos es la región",menoscontagios2,"con un total de", menor2,"casos")  
+                        
+                elif opcion_graf[op_graf - 1] == 5:
+                    print("Ha seleccionado la opción: ", opcion_graf[op_graf - 1])                    
+                    print("\nRegión: ", regiones[op - 1]) #Seleccion de region actual.
+                    print("Cantidad total de contagiados: ", regiones_total[op - 1])     
+                elif opcion_graf[op_graf - 1] == 6:
+                    print("Ha seleccionado la opción: ", opcion_graf[op_graf - 1])                    
+                    print("Gracias por utilizar el programa.")
+                    break
+            else:
+                print("Error, ingrese un índice válido")
+    else:
+        print("ingrese nombre o índice válido de la región, por favor reinicie el programa")
+        
